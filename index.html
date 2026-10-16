@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1220" />
+  <meta name="description" content="Отслеживание выбывших карт в игре «Дурак»: отметьте карты, которые уже ушли из игры." />
+  <title>Дурак — счётчик карт</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🃏</text></svg>" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand__logo" aria-hidden="true">🃏</span>
+        <div class="brand__text">
+          <h1>Дурак</h1>
+          <p class="brand__sub">выбывшие карты · 36 карт</p>
+        </div>
+      </div>
+
+      <div class="counter" id="counter" aria-live="polite">
+        <span class="counter__value" id="counterValue">36</span>
+        <span class="counter__label">в игре</span>
+        <span class="counter__total">/ 36</span>
+      </div>
+    </header>
+
+    <main class="board">
+      <p class="hint">Каждый ряд — одна масть (6 → Т). Нажмите на карту, чтобы отметить её вышедшей; повторное нажатие вернёт её в игру.</p>
+      <div class="suits" id="suits" role="group" aria-label="Колода из 36 карт, по ряду на каждую масть"></div>
+    </main>
+
+    <footer class="actions">
+      <button class="btn btn--reset" id="resetBtn" type="button">
+        <span class="btn__icon" aria-hidden="true">↺</span>
+        Сбросить
+      </button>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
